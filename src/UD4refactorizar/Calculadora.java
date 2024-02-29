@@ -9,35 +9,24 @@ package UD4refactorizar;
  * @author usuario
  */
 
-public class Calculadora {
+public class Calculadora extends SuperCalculadora implements interfaceCalculadora {
 
     public int resultado;
     
+    @Override
     public int sumar(int operador1, int operador2) {
         return operador1 + operador2;
     }
 
-    public static int restar(int restando1, int restando2) {
+    @Override
+    public int restar(int restando1, int restando2) {
         return restando1 - restando2;
     }
 
-    public static int multiplicar(int multiplicando1, int multiplicando2) {
+    public int multiplicar(int multiplicando1, int multiplicando2) {
         return multiplicando1 * multiplicando2;
     }
 
-    public static int dividir(int dividendo1, int dividendo2) {
-        if (dividendo2 == 0) {
-            throw new ArithmeticException("División por cero");
-        }
-        return dividendo1 / dividendo2;
-    }
-
-    public static int modulo(int operador1, int operador2) {
-        if (operador2 == 0) {
-            throw new ArithmeticException("Módulo por cero");
-        }
-        return operador1 % operador2;
-    }
     
     public int operacion(int operador1, int operador2, String operacion) {
         if (null != operacion) switch (operacion) {
