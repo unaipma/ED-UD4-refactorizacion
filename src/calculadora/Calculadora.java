@@ -11,7 +11,9 @@ package calculadora;
 
 public class Calculadora {
 
-    public static int sumar(int a, int b) {
+    public int resultado;
+    
+    public int sumar(int a, int b) {
         return a + b;
     }
 
@@ -36,4 +38,25 @@ public class Calculadora {
         }
         return a % b;
     }
+    
+    public static int operacion(int a, int b, String operacion) {
+        if ("sumar".equals(operacion)) {
+            return a + b;
+        }else if ("restar".equals(operacion)) {
+            return a - b;
+        }else if ("multiplicar".equals(operacion)) {
+            return a * b;
+        }else if ("dividir".equals(operacion)) {
+            return a / b;
+        }else if ("modulo".equals(operacion)) {
+            return a % b;
+        }
+        
+        throw new IllegalArgumentException("Operación no válida");
+    }
+  
+
+  public static int operacionObsoleta(int a, int b) {
+        return a + b;
+  }
 }
