@@ -13,44 +13,44 @@ public class Calculadora {
 
     public int resultado;
     
-    public int sumar(int a, int b) {
-        return a + b;
+    public int sumar(int operador1, int operador2) {
+        return operador1 + operador2;
     }
 
-    public static int restar(int a, int b) {
-        return a - b;
+    public static int restar(int restando1, int restando2) {
+        return restando1 - restando2;
     }
 
-    public static int multiplicar(int a, int b) {
-        return a * b;
+    public static int multiplicar(int multiplicando1, int multiplicando2) {
+        return multiplicando1 * multiplicando2;
     }
 
-    public static int dividir(int a, int b) {
-        if (b == 0) {
+    public static int dividir(int dividendo1, int dividendo2) {
+        if (dividendo2 == 0) {
             throw new ArithmeticException("División por cero");
         }
-        return a / b;
+        return dividendo1 / dividendo2;
     }
 
-    public static int modulo(int a, int b) {
-        if (b == 0) {
+    public static int modulo(int operador1, int operador2) {
+        if (operador2 == 0) {
             throw new ArithmeticException("Módulo por cero");
         }
-        return a % b;
+        return operador1 % operador2;
     }
     
-    public int operacion(int a, int b, String operacion) {
+    public int operacion(int operador1, int operador2, String operacion) {
         if (null != operacion) switch (operacion) {
             case "sumar":
-                return sumar(a,b);
+                return sumar(operador1,operador2);
             case "restar":
-                return restar(a,b);
+                return restar(operador1,operador2);
             case "multiplicar":
-                return multiplicar(a,b);
+                return multiplicar(operador1,operador2);
             case "dividir":
-                return dividir(a,b);
+                return dividir(operador1,operador2);
             case "modulo":
-                return modulo(a,b);
+                return modulo(operador1,operador2);
             default:
                 break;
         }
